@@ -1,0 +1,80 @@
+:root{
+    --body-color: #f7f5ff;
+    --primary-color: #4018e1;
+    --primary-color-hover: #2404ad;
+    --secondary-color: #bbaaff;
+    --secondary-color-hover: #9e89f3;
+}
+
+body{
+    background-color: var(--body-color) ;
+    font-family: Inter, serif !important;
+}
+
+.btn-primary-color{
+    background-color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary-color:hover{
+    background-color: var(--primary-color-hover) !important;
+    border: 2px solid var(--primary-color-hover);
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+}
+
+.btn-secondary-color{
+    background-color: var(--secondary-color) !important;
+    border: 2px solid var(--secondary-color);
+    color: white !important;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+}
+
+
+.btn-secondary-color:hover{
+    background-color: var(--secondary-color-hover) !important;
+    border: 2px solid var(--secondary-color-hover);
+    color: white ;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all ease 0.2s;
+}
+
+.btn-primary-outline{
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-primary-outline:hover{
+    background-color: transparent;
+    border: 2px solid var(--primary-color-hover);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-secondary-outline{
+    background-color: transparent;
+    border: 2px solid var(--secondary-color);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-secondary-outline:hover{
+    background-color: gainsboro;
+    border: 2px solid var(--secondary-color-hover);
+    color: black;
+    border-radius: 5px;
+    text-decoration: none;
+}
