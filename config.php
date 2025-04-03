@@ -6,7 +6,7 @@
     define('DB_NAME', 'shareboard');
 
     // Define URL
-    define("ROOT_PATH", "/ProjectPart1/");
-    define("ROOT_URL", "http://localhost/ProjectPart1/");
+    define("ROOT_PATH", "/phpProject/");
+    define("ROOT_URL", "http://localhost:8080/phpProject/");
 
 ?>

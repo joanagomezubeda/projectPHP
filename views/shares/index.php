@@ -1,5 +1,7 @@
 <div>
-    <a href="<? echo ROOT_PATH; ?>shares/add" class="btn btn-primary-color mt-4">Share Something</a>
+    <?php if(isset($_SESSION['is_logged_in'])) : ?>
+    <a href="<?php echo ROOT_PATH; ?>shares/add" class="btn btn-primary-color mt-4">Share Something</a>
+    <?php endif; ?>
     <?php foreach ($viewmodel as $item): ?>
         <div class="mt-3 border rounded shadow p-4 ">
             <h3><?php echo $item['title'];?></h3>

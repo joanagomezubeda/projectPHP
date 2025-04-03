@@ -6,8 +6,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shareboard</title>
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/bootstrap.css">
+    <link rel="stylesheet" href="<?php echo ROOT_PATH; ?>assets/css/style.css">
     <script src="assets/js/bootstrap.js"></script>
 
 </head>
@@ -29,13 +29,21 @@
 
             </ul>
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
-                <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="<?php echo ROOT_PATH;?>users/login">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="<?php echo ROOT_PATH;?>users/register">Register</a>
-                </li>
-
+                <?php if(isset($_SESSION['is_logged_in'])): ?>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="<?php echo ROOT_PATH;?>users/login">Welcome <?php echo $_SESSION['user_data']['name']; ?></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo ROOT_PATH;?>users/logout">Logout</a>
+                    </li>
+                <?php else : ?>
+                    <li class="nav-item active">
+                        <a class="nav-link" aria-current="page" href="<?php echo ROOT_PATH;?>users/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="<?php echo ROOT_PATH;?>users/register">Register</a>
+                    </li>
+                <?php endif; ?>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,6 +57,7 @@
 <div class="container">
     <div class="row">
         <div class="row">
+            <?php Messages::display(); ?>
             <?php require ($view); ?>
         </div>
     </div>
