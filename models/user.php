@@ -37,7 +37,8 @@
             // Sanitize POST
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING );
 
-            $password = md5(isset($post['password']));
+            $password = md5($post['password']);
+
 
             if(isset($post['submit'])) {
                 // Compare Login

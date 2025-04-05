@@ -1,4 +1,4 @@
-<div class="mt-5">
+<div class="mt-3">
     <h3>Log In!</h3>
     <form action="<?php $_SERVER['PHP_SELF']?>" method="post">
         <div class="form-group mt-3">
