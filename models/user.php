@@ -8,9 +8,10 @@
 
 
 
-            $password = md5(isset($post['password']));
+
 
             if(isset($post['submit'])){
+                $password = md5($post['password']);
                 if ($post['name'] == '' || $post['email'] == ''|| $post['password'] == ''){
                     Messages::setMessage('Please Fill In All Fields', 'error');
                     return;
@@ -37,10 +38,8 @@
             // Sanitize POST
             $post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING );
 
-            $password = md5($post['password']);
-
-
             if(isset($post['submit'])) {
+                $password = md5($post['password']);
                 // Compare Login
                 $this->query('SELECT * FROM users WHERE email = :email AND password = :password');
                 $this->bind(':email', $post['email']);
